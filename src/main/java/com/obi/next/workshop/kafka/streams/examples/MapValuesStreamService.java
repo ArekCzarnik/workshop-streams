@@ -1,5 +1,6 @@
-package com.obi.next.workshop.kafka.streams;
+package com.obi.next.workshop.kafka.streams.examples;
 
+import com.obi.next.workshop.kafka.streams.KafkaConfiguration;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.StreamsBuilder;
@@ -25,6 +26,7 @@ public class MapValuesStreamService {
 
     @PostConstruct
     private void init() {
+
         kafkaStreams.start();
     }
 

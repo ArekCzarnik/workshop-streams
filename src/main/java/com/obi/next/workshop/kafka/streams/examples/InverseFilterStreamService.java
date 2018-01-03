@@ -1,5 +1,6 @@
-package com.obi.next.workshop.kafka.streams;
+package com.obi.next.workshop.kafka.streams.examples;
 
+import com.obi.next.workshop.kafka.streams.KafkaConfiguration;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.kstream.KStream;
@@ -17,14 +18,14 @@ public class InverseFilterStreamService {
     private KafkaStreams buildStream() {
         StreamsBuilder builder = new StreamsBuilder();
         KStream<String, String> stream = builder.stream("weather");
-        stream.filterNot((key, value) -> value.length() > 1)
+        stream.filterNot((key, value) -> value.length() < 1)
                 .to("inverse_length_out");
         return new KafkaStreams(builder.build(), kafkaConfiguration.configuration());
     }
 
     @PostConstruct
     private void init() {
-        kafkaStreams.start();
+        //kafkaStreams.start();
     }
 
     @PreDestroy
