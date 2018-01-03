@@ -57,6 +57,14 @@
           "previewUrl": ""
         },
         "type": "mvn"
+      },
+      {
+        "commandLine": "mvn -f ${current.project.path} clean build spring-boot:run",
+        "name": "spring-boot run",
+        "attributes": {
+          "previewUrl": "http://${server.port.8080}"
+        },
+        "type": "custom"
       }
     ],
     "links": []
