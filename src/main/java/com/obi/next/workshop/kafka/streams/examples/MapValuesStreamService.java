@@ -26,8 +26,7 @@ public class MapValuesStreamService {
 
     @PostConstruct
     private void init() {
-
-        kafkaStreams.start();
+        // kafkaStreams.start();
     }
 
     @PreDestroy
