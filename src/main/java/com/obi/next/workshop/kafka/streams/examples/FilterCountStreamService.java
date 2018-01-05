@@ -35,7 +35,7 @@ public class FilterCountStreamService {
 
     @PostConstruct
     private void init() {
-        kafkaStreams.start();
+       // kafkaStreams.start();
     }
 
     @PreDestroy
